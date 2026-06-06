@@ -1852,25 +1852,25 @@
 
     .mobile-bottom-nav {
       position: fixed;
-      left: 10px;
-      right: 10px;
-      bottom: calc(10px + env(safe-area-inset-bottom));
+      left: 12px;
+      right: 12px;
+      bottom: calc(8px + env(safe-area-inset-bottom));
       z-index: 18;
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 8px;
-      padding: 10px;
-      border-radius: 22px;
+      gap: 6px;
+      padding: 8px;
+      border-radius: 20px;
       background: rgba(255, 253, 242, 0.94);
       border: 1px solid rgba(45, 125, 175, 0.14);
-      box-shadow: 0 18px 34px rgba(45, 125, 175, 0.16);
+      box-shadow: 0 14px 28px rgba(45, 125, 175, 0.14);
       backdrop-filter: blur(14px);
     }
 
     .mobile-nav-link,
     .mobile-nav-button {
-      min-height: 52px;
-      border-radius: 16px;
+      min-height: 46px;
+      border-radius: 14px;
       border: 1px solid rgba(45, 125, 175, 0.1);
       background: rgba(255,255,255,0.82);
       color: var(--ink);
@@ -1879,11 +1879,11 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 4px;
-      font-size: 0.76rem;
+      gap: 3px;
+      font-size: 0.72rem;
       font-weight: 700;
       box-shadow: none;
-      padding: 6px 4px;
+      padding: 5px 4px;
     }
 
     .mobile-nav-button {
@@ -1893,21 +1893,29 @@
 
     .mobile-nav-link svg,
     .mobile-nav-button svg {
-      width: 18px;
-      height: 18px;
+      width: 17px;
+      height: 17px;
       display: block;
     }
 
     .mobile-nav-cart-count {
-      min-width: 18px;
-      height: 18px;
-      padding: 0 5px;
+      min-width: 17px;
+      height: 17px;
+      padding: 0 4px;
       border-radius: 999px;
       display: inline-grid;
       place-items: center;
       background: #ff8a4c;
       color: #fff;
-      font-size: 0.7rem;
+      font-size: 0.66rem;
+    }
+
+    .mobile-nav-button.icon-cart-only {
+      gap: 2px;
+    }
+
+    .mobile-nav-button.icon-cart-only .mobile-cart-label {
+      display: none;
     }
 
     .footer-grid {
@@ -1959,6 +1967,10 @@
 
     .topline {
       text-align: center;
+    }
+
+    .topline .logo-mark {
+      display: none;
     }
 
     .logo-mark {
@@ -2762,13 +2774,13 @@
       </svg>
       <span>Order</span>
     </a>
-    <button class="mobile-nav-button" type="button" id="mobileCartButton">
+    <button class="mobile-nav-button icon-cart-only" type="button" id="mobileCartButton">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <circle cx="9" cy="20" r="1"></circle>
         <circle cx="18" cy="20" r="1"></circle>
         <path d="M2 3h3l2.2 10.3a1 1 0 0 0 1 .7h9.8a1 1 0 0 0 1-.8L21 6H6"></path>
       </svg>
-      <span>Cart</span>
+      <span class="mobile-cart-label">Cart</span>
       <span class="mobile-nav-cart-count" id="mobileCartCount">0</span>
     </button>
   </nav>
